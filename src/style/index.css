@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.336);
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.fadeIn {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  align-items: center;
+  margin-inline: 3rem;
+  padding-block: 0.5rem;
+}
+.navbar-company {
+  display: flex;
+  align-items: center;
+}
+.navbar-company #companyName {
+  font-size: 2.5rem;
+  margin-left: 1rem;
+  justify-self: start;
+  font-family: "Trebuchet MS", sans-serif;
+}
+.navbar-company #logo {
+  width: 180px;
+  height: 100px;
+}
+.navbar-links {
+  justify-self: center;
+  width: 100%;
+}
+.navbar-links-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0;
+}
+.navbar-links-list #about {
+  cursor: pointer;
+}
+.navbar-links-list #about:hover {
+  opacity: 60%;
+}
+.navbar-links-list #contact {
+  cursor: pointer;
+}
+.navbar-links-list #contact:hover {
+  opacity: 60%;
+}
+.navbar-links-list #store {
+  cursor: pointer;
+}
+.navbar-links-list #store:hover {
+  opacity: 60%;
+}
+.navbar-icons {
+  justify-self: end;
+  display: flex;
+  font-size: 2rem;
+  gap: 2rem;
+  margin-right: 1rem;
+}
+.navbar-icons #user {
+  cursor: pointer;
+}
+.navbar-icons #user:hover {
+  opacity: 60%;
+}
+.navbar-icons #cart {
+  cursor: pointer;
+}
+.navbar-icons #cart:hover {
+  opacity: 60%;
+}
+
+#sidebarArrow {
+  display: inline;
+  position: sticky;
+  top: 50%;
+  font-size: 2rem;
+  color: rgb(25, 56, 75);
+  background-color: rgba(24, 56, 75, 0.514);
+  border: 0px solid rgba(24, 56, 75, 0.514);
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  padding: 0.4rem;
+  width: fit-content;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+#sidebarArrow:hover + .sidebar {
+  left: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 25%;
+  left: -400px;
+  overflow: hidden;
+  display: flex;
+  background-color: rgba(24, 56, 75, 0.514);
+  box-shadow: 4px 4px 4px rgba(35, 64, 82, 0.267);
+  width: fit-content;
+  transition: left 0.6s linear;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 1.4rem;
+  color: whitesmoke;
+  height: 500px;
+}
+.sidebar:hover {
+  left: 0;
+}
+.sidebar-container {
+  display: flex;
+}
+.sidebar .filter-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.sidebar .filter-form-search {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem;
+}
+.sidebar .filter-form-search .searchbar {
+  margin-block: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.89);
+  border: 0;
+  border-radius: 0.2rem;
+}
+.sidebar .filter-form-category {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem;
+  gap: 2rem;
+}
+.sidebar .filter-form-category-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.sidebar .filter-form-category-item .category-active {
+  color: rgb(138, 212, 255);
+}
+.sidebar .filter-form-submit {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  margin: 0.4rem;
+}
+.sidebar .filter-form-submit button {
+  border: 0;
+  border-radius: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.815);
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  color: rgb(66, 66, 66);
+  width: 100%;
+  cursor: pointer;
+}
+.sidebar .filter-form-submit button:hover {
+  background-color: rgba(92, 151, 185, 0.493);
+}
+.sidebar .filter-form-submit button:active {
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.151);
+}
+
+.home-page-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scale: 0.7;
+  gap: 2rem;
+}
+.home-page-items .home-page-title {
+  width: fit-content;
+  scale: 1.4;
+}
+.home-page-items .home-page-button {
+  width: 10rem;
+  height: 2.7rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: rgba(92, 151, 185, 0.541);
+  font-weight: bold;
+  color: black;
+  scale: 1.4;
+  cursor: pointer;
+}
+.home-page-items .home-page-button:hover {
+  background-color: rgba(92, 151, 185, 0.8);
+}
+.home-page-items .product-list-home {
+  margin-inline: 5.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  border: 2px solid rgba(128, 128, 128, 0.582);
+  padding: 1rem;
+  width: 100%;
+}
+
+.product-list {
+  margin-inline: 5.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 500px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.card-title {
+  font-size: 0.8rem;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-title #productTitle {
+  text-align: center;
+}
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+.card-text #productCategory {
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.329);
+}
+.card-text #productPrice {
+  font-weight: bold;
+  color: rgb(0, 110, 0);
+}
+.card-text #productDescription {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  width: 280px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  margin-block: 1rem;
+  -webkit-line-clamp: 4;
+}
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card-buttons-add {
+  background-color: rgba(92, 151, 185, 0.541);
+  border: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.39);
+  font-weight: bold;
+  width: 15rem;
+  height: 2rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.card-buttons-add:hover {
+  background-color: rgba(92, 151, 185, 0.8);
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  overflow: hidden;
+}
+
+.carousel__btn {
+  background-color: rgba(92, 151, 185, 0.541);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 0.5rem;
+}
+
+.carousel__btn:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel__btn--prev {
+  height: 60px;
+  width: 40px;
+}
+
+.carousel__btn--next {
+  height: 60px;
+  width: 40px;
+}
+
+.carousel__img {
+  height: 160px;
+  transition: transform 0.2s linear;
+}
+
+.carousel__img:hover {
+  transform: scale(102%);
+}
+
+/*# sourceMappingURL=index.css.map */

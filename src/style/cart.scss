@@ -1,0 +1,167 @@
+/*main {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+}*/
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    border: 4px double black;
+    width: 50%;
+    padding: 1rem;
+    gap: 1rem;
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+
+        &-forms {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+            &-user {
+                border: 2px solid rgba(0, 0, 0, 0.274);
+                padding: 1rem;
+                width: fit-content;
+            }
+            &-adress {
+                border: 2px solid rgba(0, 0, 0, 0.274);
+                padding: 1rem;
+                width: fit-content;
+            }
+            &-payment {
+                border: 2px solid rgba(0, 0, 0, 0.274);
+                padding: 1rem;
+                width: fit-content;
+            }
+        }
+
+
+        &-oversight {
+            display: flex;
+            border: 2px solid rgba(0, 0, 0, 0.274);
+            width: 50%;
+
+            &-label {
+                border-bottom: 2px solid rgba(0, 0, 0, 0.274);
+                height: fit-content;
+                width: 100%;
+                color: rgba(0, 0, 0, 0.678);
+                text-align: center;
+                padding: .5rem;
+            }
+            
+            &-container {
+
+            }
+        }
+    }
+}
+
+.user-form {
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+
+    }
+
+    .form-input {
+        width: 16rem;
+    }
+}
+
+.contact {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+
+    &-FLName {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &-group {
+        display: flex;
+        flex-direction: column;
+        margin: .2rem;
+    }
+
+    &-input {
+        border: 1px solid black;
+        height: 1.7rem;
+        width: 12rem;
+        font-family: 'Trebuchet MS', sans-serif;
+        font-size: 1.3rem;
+
+        &-big{
+            border: 1px solid black;
+            font-size: 1.3rem;
+        }
+    }
+
+    #emailContact {
+        
+        width: 25.8rem;
+    }
+
+    #contentContact {
+        width: 25.8rem;
+        height: 10rem;
+        resize: none;
+    }
+
+    #buttonContact {
+        margin-top: 1rem;
+        border: none;
+        width: 5rem;
+        height: 2rem;
+        border-radius: 1rem;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.452);
+        background-color: rgba(8, 170, 157, 0.568);
+        transition: box-shadow .2s, background-color .1s linear;
+        font-size: 1.2rem;
+
+        cursor: pointer;
+
+        &:hover {
+            box-shadow:1px 1px 4px rgba(0, 0, 0, 0.747);
+        }
+        &:active {
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.603);
+            background-color: rgba(8, 170, 157, 0.7);
+        }
+    }
+}
+
+.error {
+    font-size: .8rem;
+    color: red;
+}
+
+.success {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: rgb(96, 156, 0);
+    text-decoration: underline;
+}

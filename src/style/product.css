@@ -1,0 +1,69 @@
+.item {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+.item-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  border: 2px solid rgba(0, 0, 0, 0.548);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.555);
+  padding: 1rem;
+}
+.item-container-top {
+  display: flex;
+  justify-content: space-between;
+}
+.item-container-top-images {
+  gap: 0.5rem;
+  width: 65%;
+  display: flex;
+}
+.item-container-top-images-hightlight {
+  width: 380px;
+  height: 300px;
+}
+.item-container-top-images-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.item-container-top-images-list-side {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.158);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.item-container-top-images-list-side:hover {
+  transform: scale(1.05);
+}
+.item-container-top-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  height: 160px;
+  width: 35%;
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+.item-container-top-info-title {
+  font-size: larger;
+}
+.item-container-top-info-price {
+  color: green;
+  font-size: larger;
+}
+.item-container-bottom {
+  margin-top: 2rem;
+  color: rgb(102, 102, 102);
+  font-size: 0.9rem;
+}
+.item-container-bottom-description {
+  width: 50%;
+}
+
+/*# sourceMappingURL=product.css.map */
