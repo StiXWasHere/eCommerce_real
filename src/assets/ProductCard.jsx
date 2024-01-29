@@ -26,7 +26,7 @@ export const ProductCard = ({ product }) => {
             </div>
             <div className="card-buttons">
                 <button className="card-buttons-add" id='productButtonAddToCart'>Add to cart</button>
-                <button onClick={handleClick} className="card-buttons-add"><Link to={`/product/${product._id}`} className='nav-link'>Details</Link></button>
+                <NavLink to={`/product/${product._id}`} className='nav-link'><button className="card-buttons-add">Details</button></NavLink>
             </div>
         </div>
     )

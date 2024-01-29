@@ -37,7 +37,7 @@ function Home() {
                         ))
                     }
                 </div>
-                <button className="home-page-button" onClick={handleClick}><NavLink to="/store" className="nav-link">Show more</NavLink></button>
+                <NavLink to="/store" className="nav-link"><button className="home-page-button" onClick={handleClick}>Show more</button></NavLink>
             </div>
             <div className="home-page-items">
                 <h2 className="home-page-title">Best deals</h2>

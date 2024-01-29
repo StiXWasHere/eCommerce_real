@@ -15,7 +15,9 @@ body {
 header {
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.336);
     background-color: white;
-    position: sticky;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
     top: 0;
 }
 .fadeOut {
@@ -213,6 +215,10 @@ header {
     }
 }
 
+.home-page {
+    margin-top: 3rem;
+}
+
 .home-page-items {
     display: flex;
     flex-direction: column;
@@ -262,6 +268,7 @@ header {
     justify-items: center;
     align-items: center;
     gap: 1rem;
+    margin-top: 6rem;
 }
 
 .card {

@@ -1,0 +1,56 @@
+.drop-down-container {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgba(128, 128, 128, 0.555);
+  position: absolute;
+  right: 0;
+  margin-right: 4rem;
+  margin-top: 0.5rem;
+  z-index: 1000;
+  font-size: 1rem;
+  cursor: auto;
+}
+.drop-down-container-list {
+  max-height: 300px;
+  scrollbar-width: 0.5rem;
+}
+.drop-down-container-values {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0.5rem;
+}
+.drop-down-container-values #cartPrice {
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
+}
+.drop-down-container-values #goToCheckout {
+  width: 11rem;
+}
+
+.object-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 0.4rem;
+  margin: 0.2rem;
+  border: 1px solid black;
+}
+.object-container-right {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+.object-container #objectImage {
+  width: 50px;
+  height: 40px;
+}
+.object-container #objectName {
+  font-weight: bold;
+}
+.object-container #objectPrice {
+  color: green;
+}
+
+/*# sourceMappingURL=dropDown.css.map */
