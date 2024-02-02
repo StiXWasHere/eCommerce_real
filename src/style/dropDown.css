@@ -37,10 +37,43 @@
   margin: 0.2rem;
   border: 1px solid black;
 }
+.object-container:hover {
+  background-color: rgba(187, 187, 187, 0.116);
+}
+.object-container-left {
+  display: flex;
+  flex-direction: column;
+}
+.object-container-left .close-button {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: red;
+  cursor: pointer;
+}
 .object-container-right {
   display: flex;
   flex-direction: column;
   text-align: end;
+}
+.object-container-right-quantity {
+  display: flex;
+  justify-content: end;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+.object-container-right-quantity .quantity-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: white;
+  height: 0.9rem;
+  width: 0.9rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.object-container-right-quantity .quantity-buttons:hover {
+  background-color: rgb(197, 197, 197);
 }
 .object-container #objectImage {
   width: 50px;

@@ -45,14 +45,53 @@
     margin: .2rem;
     border: 1px solid black;
 
-    &-left {
+    &:hover {
+        background-color: rgba(187, 187, 187, 0.116);
+    }
 
+    &-left {
+        display: flex;
+        flex-direction: column;
+
+        .close-button {
+            width: .7rem;
+            height: .7rem;
+            color: red;
+
+            cursor: pointer;
+        }
     }
 
     &-right {
         display: flex;
         flex-direction: column;
         text-align: end;
+
+        &-quantity {
+            display: flex;
+            justify-content: end;
+            align-items: baseline;
+            gap: .2rem;
+
+
+            .quantity-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                background-color: white;
+                height: .9rem;
+                width: .9rem;
+                font-size: .8rem;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgb(197, 197, 197);
+                }
+            }
+        }
+
     }
 
     #objectImage {

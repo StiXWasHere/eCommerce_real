@@ -12,18 +12,6 @@ export const ContactForm = () => {
 
     const [errors, setErrors] = useState({})
 
-    /*const handleSubmit = (e) => {
-        e.preventDefault()
-
-        if(!validate(formData, setErrors)) {
-            setErrors(err => ({
-                ...err
-            }))
-            return
-        }
-        console.log(formData)
-    }*/
-
     const handleChange = (e) => {
         setFormData(data => {
             return {
@@ -50,7 +38,7 @@ export const ContactForm = () => {
           name: `${formData.firstName} ${formData.lastName}`,
           email: formData.email,
           message: formData.content,
-        };
+        }
       
         try {
           const res = await fetch('https://js2-ecommerce-api.vercel.app/api/messages', {

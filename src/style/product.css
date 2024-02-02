@@ -1,3 +1,9 @@
+.success-stat {
+  font-size: 0.8rem;
+  color: grey;
+  text-align: center;
+}
+
 .item {
   display: flex;
   justify-content: center;

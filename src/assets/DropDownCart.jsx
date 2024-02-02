@@ -2,45 +2,34 @@ import { useState } from 'react'
 import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CartItem } from "./CartItem"
+import { useCart } from '../context/CartContext'
+import { NavLink } from 'react-router-dom'
 
-export const cartItems = [
-  {
-    product: {
-      _id: "658af3e7d711cabe3c94045e",
-      name: "HP Pavilion 15-eh3004no",
-      price: 11999,
-      images: ["https://www.komplett.se/img/p/1200/1247160.jpg"],
-    },
-    quantity: 1
-  },
-  {
-    product: {
-      _id: "658af3e7d711cabe3c94045e",
-      name: "HP Pavilion 15-eh3004no",
-      price: 11999,
-      images: ["https://www.komplett.se/img/p/1200/1247160.jpg"],
-    },
-    quantity: 1
-  },
-]
+
 
 function DropDownCart() {
 
-    const [visibility, setVisibility] = useState("hidden")
-    console.log(cartItems)
+  const { cart, totalPrice, totalQuantity } = useCart()
+
+  const [visibility, setVisibility] = useState("hidden")
+
+  const handleClick = (e) => {
+    e.stopPropagation()
+    e.preventDefault()
+  }
 
   return (
-    <div className="drop-down">
+    <div onClick={handleClick} className="drop-down">
         <FontAwesomeIcon onMouseOver={() => setVisibility("visible")}  icon={faCartShopping} id="cart"/>
         <div className="drop-down-container" style={{ visibility: visibility }} onMouseLeave={() => setVisibility("hidden")}>
             <div className="drop-down-container-list">
-                { cartItems.map(item => (
-                  <CartItem  item={item}/>
+                { cart.map(item => (
+                  <CartItem key={'cart_' + item.product._id} item={item}/>
                 ))}
             </div>
             <div className="drop-down-container-values">
-              <p id='cartPrice'>Total price: 0 kr</p>
-              <button className="card-buttons-add" id='goToCheckout'>Go to checkout</button>
+              <p id='cartPrice'>Total price: {totalPrice}kr</p>
+              <NavLink to="/checkout" className="nav-link"><button className="card-buttons-add" id='goToCheckout'>Go to checkout</button></NavLink>
             </div>
             
         </div>

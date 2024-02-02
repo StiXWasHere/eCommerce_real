@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping, faUser } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from "react-router-dom"
 import DropDownCart from "./DropDownCart"
-import { cartItems } from "./DropDownCart"
 import { CartItem } from "./CartItem"
 
 function Navbar() {
@@ -50,7 +49,7 @@ function Navbar() {
                 </div>
                 <div className="navbar-icons">
                     <FontAwesomeIcon icon={faUser} id="user"/>
-                    <NavLink to="/checkout" className="nav-link"><DropDownCart /></NavLink>
+                    <DropDownCart />
                 </div>
             </div>
         </header>

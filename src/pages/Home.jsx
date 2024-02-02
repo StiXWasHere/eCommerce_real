@@ -33,7 +33,7 @@ function Home() {
                 <div className="product-list-home">
                     {
                         data && data.slice(0, 3).map(product => (
-                            <ProductCard key={product.id} product={product}/>
+                            <ProductCard key={product._id} product={product}/>
                         ))
                     }
                 </div>
@@ -44,7 +44,7 @@ function Home() {
                 <div className="product-list-home">
                     {
                         productDeals.map(product => (
-                            <ProductCard key={product.id} product={product}/>
+                            <ProductCard key={product._id} product={product}/>
                         ))
                     }
                 </div>

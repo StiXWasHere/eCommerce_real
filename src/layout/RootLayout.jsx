@@ -3,18 +3,20 @@ import Sidebar from "../assets/Sidebar"
 import { Outlet } from "react-router-dom"
 import '../style/index.css'
 import '../style/dropDown.css'
+import '../style/product.css'
+import '../style/cart.css'
+import Providers from "../assets/Providers"
 
 function RootLayout() {
 
 
     return(
-        <>  
+        <Providers>  
             <Navbar />
-            <Sidebar />
             <main>
                 <Outlet />
             </main>
-        </>
+        </Providers>
     )
 }
 

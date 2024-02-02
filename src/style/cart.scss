@@ -1,9 +1,9 @@
-/*main {
-    margin-top: 3rem;
+.cart-body {
+    margin-top: 10rem;
     display: flex;
     justify-content: center;
 
-}*/
+}
 
 .cart {
     display: flex;
@@ -42,13 +42,13 @@
 
         &-oversight {
             display: flex;
+            flex-direction: column;
             border: 2px solid rgba(0, 0, 0, 0.274);
             width: 50%;
 
             &-label {
                 border-bottom: 2px solid rgba(0, 0, 0, 0.274);
                 height: fit-content;
-                width: 100%;
                 color: rgba(0, 0, 0, 0.678);
                 text-align: center;
                 padding: .5rem;
@@ -165,3 +165,15 @@
     color: rgb(96, 156, 0);
     text-decoration: underline;
 }
+
+.cart-bottom {
+    display: flex;
+    justify-content: space-between;
+    .cart-success {
+    color: green;
+    }
+    .cart-error {
+        color: red;
+    }
+}
+
