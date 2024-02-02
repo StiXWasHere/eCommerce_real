@@ -5,48 +5,87 @@ import {UserForm} from '../forms/UserForm'
 import {PaymentForm} from '../forms/PaymentForm'
 import CartItem from '../assets/CartItem'
 import { useCart } from '../context/CartContext'
+import { userValidate } from '../utils/FormUserValidation'
+import { adressValidate } from '../utils/FormAdressValidation'
+import { paymentValidate } from '../utils/FormPaymentValidation'
 
 function Cart() {
 
-    const { cart, totalPrice, totalQuantity } = useCart()
+    const { cart, totalPrice, totalQuantity, clearCart } = useCart()
 
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
-
+  
     const placeOrder = async () => {
         
-        const orderItems = cart.map((item) => ({
-          productId: item.product._id,
-          quantity: item.quantity,
-        }))
-
-        const orderData = {
-            products: orderItems,
-        }
-    
-        try {
+        const userForm = document.getElementById('UserForm')
+        const adressForm = document.getElementById('AdressForm')
+        const paymentForm = document.getElementById('PaymentForm')
+        const formErrors = document.getElementsByClassName('error')
+        console.log(formErrors.length)
           
-          const res = await fetch('https://js2-ecommerce-api.vercel.app/api/orders', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(orderData),
-          })
-    
-          if (res.ok) {
-            setSuccess('Order has been placed!')
-            setError('')
-          } else {
-            setError('Order failed to send')
-            console.log(res.status)
-          }
-        } catch (err) {
-            setError('Order failed to send')
-        }
-      }
-    
+        if (userForm && adressForm && paymentForm) {
+            
+            const formPromises = [              
+            userForm.requestSubmit(),
+            adressForm.requestSubmit(),
+            paymentForm.requestSubmit()
+            ]
 
+            try {
+
+                await Promise.all(formPromises)
+
+                if(cart.length  !== 0 && formErrors.length === 0) {
+
+                const orderItems = cart.map((item) => ({
+                    productId: item.product._id,
+                    quantity: item.quantity,
+                    }))
+
+                    const orderData = {
+                        products: orderItems,
+                    }
+                
+                    try {
+                    
+                    const res = await fetch('https://js2-ecommerce-api.vercel.app/api/orders', {
+                        method: 'POST',
+                        headers: {
+                        'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(orderData),
+                    })
+                
+                    if (res.ok) {
+                        setSuccess('Order has been placed!')
+                        setError('')
+                    } else {
+                        setError('Order failed to send')
+                        console.log(res.status)
+                    }
+                    } catch (err) {
+                        setError('Order failed to send')
+                    }
+                }
+            
+                else {
+                    if (formErrors.length > 0) {
+                        setError('Invalid forms')
+                        setSuccess('')
+                        return
+                    } else {
+                        setError('Cart is empty')
+                        setSuccess('')
+                        return
+                    } 
+                }
+            } catch {
+                console.log('Error')
+            }        
+        } 
+    }
+         
     return (
         <div className="cart-body">
             <div className="cart">
@@ -71,7 +110,8 @@ function Cart() {
                         ))}
                         </div>
                         <div className="cart-container-oversight-price">
-
+                            <p>Total price:{totalPrice}kr</p>
+                            <button onClick={clearCart} className="clear-cart">Clear cart</button>
                         </div>
                     </div>
                 </div>

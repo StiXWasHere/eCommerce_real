@@ -1,5 +1,6 @@
 .cart-body {
   margin-top: 10rem;
+  margin-bottom: 5rem;
   display: flex;
   justify-content: center;
 }
@@ -49,9 +50,43 @@
   text-align: center;
   padding: 0.5rem;
 }
+.cart-container-oversight-container {
+  height: 650px;
+  max-height: 650px;
+  overflow-y: scroll;
+}
+.cart-container-oversight-container::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.cart-container-oversight-container::-webkit-scrollbar-thumb {
+  background-color: rgb(53, 53, 53);
+}
+.cart-container-oversight-container::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+}
+.cart-container-oversight-price {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid rgba(0, 0, 0, 0.274);
+  padding: 0.4rem;
+  color: green;
+}
+.cart-container-oversight-price .clear-cart {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: red;
+  color: white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.322);
+  cursor: pointer;
+}
+.cart-container-oversight-price .clear-cart:hover {
+  background-color: rgb(117, 0, 0);
+}
+
 .user-form .form-group {
   display: flex;
   flex-direction: column;
+  min-height: 55px;
 }
 .user-form .form-input {
   width: 16rem;
