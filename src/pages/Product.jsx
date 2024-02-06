@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import '../style/product.css'
 import '../style/index.css'
+import { useCart } from '../context/CartContext.jsx'
 
 
 function Product() {
@@ -12,6 +13,13 @@ function Product() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const { id } = useParams()
+
+    const { addItem } = useCart()
+
+    const handleClick = (e) => {
+        addItem(product)
+        setAddSuccess('Product added to cart')
+    }
 
     useEffect(() => {
         setLoading(true)
@@ -83,7 +91,7 @@ function Product() {
                                             <span className="item-container-top-info-price-text">{product.price}kr</span>
                                         </div>
                                         <div className="item-container-top-info-button">
-                                            <button className="card-buttons-add" id='productButtonAddToCart'>Add to cart</button>
+                                            <button onClick={handleClick} className="card-buttons-add" id='productButtonAddToCart'>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
